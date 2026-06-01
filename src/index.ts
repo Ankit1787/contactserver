@@ -4,7 +4,10 @@ import connectDatabase from "./config/database.js";
 import authRouter from "./routes/auth.routes.js";
 import userRouter from "./routes/user.routes.js";
 import { authMiddleware } from "./middleware/auth.js";
+import cors from "cors";
+
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 app.use("/auth",authRouter)
